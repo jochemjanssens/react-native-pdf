@@ -475,7 +475,7 @@ const float MIN_SCALE = 1.0f;
     
     CGPoint point = [sender locationInView:self];
     PDFPage *pdfPage = [_pdfView pageForPoint:point nearest:NO];
-    point2 = [_pdfView convertPoint:point toPage:(PDFPage *pdfPage)page];
+    CGPoint point2 = [_pdfView convertPoint:point toPage:*pdfPage];
     printf("hello");
 
     if (pdfPage) {
