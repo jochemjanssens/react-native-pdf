@@ -57,9 +57,11 @@ PODS:
     - React-cxxreact (= 0.60.4)
     - React-jsi (= 0.60.4)
   - React-jsinspector (0.60.4)
-  - react-native-orientation-locker (1.1.6):
+  - react-native-orientation-locker (1.2.0):
     - React
-  - react-native-pdf (5.1.3):
+  - react-native-progress-bar-android (1.0.3):
+    - React
+  - react-native-progress-view (1.1.1):
     - React
   - React-RCTActionSheet (0.60.4):
     - React-Core (= 0.60.4)
@@ -85,7 +87,7 @@ PODS:
   - React-RCTWebSocket (0.60.4):
     - React-Core (= 0.60.4)
     - React-fishhook (= 0.60.4)
-  - rn-fetch-blob (0.10.16):
+  - rn-fetch-blob (0.12.0):
     - React-Core
   - yoga (0.60.4.React)
 
@@ -102,7 +104,8 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-orientation-locker (from `../node_modules/react-native-orientation-locker`)
-  - react-native-pdf (from `../node_modules/react-native-pdf`)
+  - "react-native-progress-bar-android (from `../node_modules/@react-native-community/progress-bar-android`)"
+  - "react-native-progress-view (from `../node_modules/@react-native-community/progress-view`)"
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
@@ -117,7 +120,7 @@ DEPENDENCIES:
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - boost-for-react-native
 
 EXTERNAL SOURCES:
@@ -145,8 +148,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-orientation-locker:
     :path: "../node_modules/react-native-orientation-locker"
-  react-native-pdf:
-    :path: "../node_modules/react-native-pdf"
+  react-native-progress-bar-android:
+    :path: "../node_modules/@react-native-community/progress-bar-android"
+  react-native-progress-view:
+    :path: "../node_modules/@react-native-community/progress-view"
   React-RCTActionSheet:
     :path: "../node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
@@ -185,8 +190,9 @@ SPEC CHECKSUMS:
   React-jsi: 21d3153b1153fbf6510a92b6b11e33e725cb7432
   React-jsiexecutor: 7549641e48bafae7bfee3f3ea19bf4901639c5de
   React-jsinspector: 73f24a02fa684ed6a2b828ba116874a2191ded88
-  react-native-orientation-locker: 23918c400376a7043e752c639c122fcf6bce8f1c
-  react-native-pdf: 4ac64df95050555cce80d69c7e798322e1be4e6b
+  react-native-orientation-locker: 47aaa55d59bfc1613804dc22f159e6bb1cca5f30
+  react-native-progress-bar-android: d1ec460350b7c0d27418b0c0b9ebf073646db016
+  react-native-progress-view: 8529425acbb93f918f3675bbece48f6b551b1384
   React-RCTActionSheet: 9f71d7ae3e8fb10e08d162cbf14c621349dbfab3
   React-RCTAnimation: 981d8c95b0e30918a9832ccac32af83562a27fae
   React-RCTBlob: 21e73d1020a302a75fed30dbaee9f15287b80baa
@@ -197,9 +203,9 @@ SPEC CHECKSUMS:
   React-RCTText: e0f224898b13af9aa036ea7cb3d438daa68c1044
   React-RCTVibration: 0bea40cd51bd089bd591a8f74c86e91fdf2666c5
   React-RCTWebSocket: 163873f4cdd5f1058a9483443404fc3801581cb6
-  rn-fetch-blob: 651b8d076b43d0d7aa294a3d9ec16c00aab8bef9
+  rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 
 PODFILE CHECKSUM: fa2ed14dc2ca3d3057253b0ab7351f9c47b7c163
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.9.1

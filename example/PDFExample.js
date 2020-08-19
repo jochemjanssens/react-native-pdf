@@ -82,8 +82,8 @@ export default class PDFExample extends React.Component {
     };
 
     render() {
-        let source = {uri:'http://samples.leanpub.com/thereactnativebook-sample.pdf',cache:true};
-        //let source = require('./test.pdf');  // ios only
+        // let source = {uri:'http://samples.leanpub.com/thereactnativebook-sample.pdf',cache:true};
+        let source = require('./test.pdf');  // ios only
         //let source = {uri:'bundle-assets://test.pdf'};
 
         //let source = {uri:'file:///sdcard/test.pdf'};
@@ -128,6 +128,11 @@ export default class PDFExample extends React.Component {
                          source={source}
                          scale={this.state.scale}
                          horizontal={this.state.horizontal}
+                         enableAnnotationRendering={true}
+                         onPageSingleTap={(page, x, y) => {
+                             console.log(x);
+                             console.log(y);
+                         }}
                          onLoadComplete={(numberOfPages, filePath,{width,height},tableContents) => {
                              this.setState({
                                 numberOfPages: numberOfPages 
