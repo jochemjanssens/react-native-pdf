@@ -159,7 +159,7 @@ public class PdfView extends PDFView implements OnPageChangeListener,OnLoadCompl
     @Override
     public boolean onTap(MotionEvent e){
 
-        LOGGER.warning(e);
+        LOGGER.warning("This is a test warning");
 
         // maybe change by other instance, restore zoom setting
         //Constants.Pinch.MINIMUM_ZOOM = this.minScale;
