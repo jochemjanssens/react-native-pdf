@@ -163,7 +163,7 @@ public class PdfView extends PDFView implements OnPageChangeListener,OnLoadCompl
         val xPositionRelativeToPage = xPositionInRealScale / this.getPageSize(0).width * 100;
         val yPositionRelativeToPage = yPositionInRealScale / this.getPageSize(0).height * 100;
 
-        LOGGER.warning("xPositionInRealScale" + xPositionRelativeToPage);
+        showLog(format("%s %s / %s", path, page, numberOfPages));
 
         WritableMap event = Arguments.createMap();
         event.putString("message", "pageSingleTap|"+page+"|"+xPositionRelativeToPage+"|"+yPositionRelativeToPage);
