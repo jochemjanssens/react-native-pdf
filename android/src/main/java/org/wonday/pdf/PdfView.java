@@ -169,6 +169,7 @@ public class PdfView extends PDFView implements OnPageChangeListener,OnLoadCompl
         //Constants.Pinch.MAXIMUM_ZOOM = this.maxScale;
 
         LOGGER.warning("xPositionInRealScale");
+        LOGGER.warning(xPositionInRealScale);
 
         WritableMap event = Arguments.createMap();
         event.putString("message", "pageSingleTap|"+page+"|"+xPositionInRealScale+"|"yPositionInRealScale);
