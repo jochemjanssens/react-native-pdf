@@ -9,6 +9,7 @@
 package org.wonday.pdf;
 
 import java.io.File;
+import java.util.logging.Logger;
 
 import android.content.Context;
 import android.view.View;
@@ -56,6 +57,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class PdfView extends PDFView implements OnPageChangeListener,OnLoadCompleteListener,OnErrorListener,OnTapListener,OnDrawListener,OnPageScrollListener, LinkHandler {    
+    private final static Logger LOGGER = Logger.getLogger(PdfView.class.getName());
 
     private ThemedReactContext context;
     private int page = 1;               // start from 1
@@ -161,11 +163,7 @@ public class PdfView extends PDFView implements OnPageChangeListener,OnLoadCompl
         val xPositionRelativeToPage = xPositionInRealScale / this.getPageSize(0).width * 100;
         val yPositionRelativeToPage = yPositionInRealScale / this.getPageSize(0).height * 100;
 
-        // maybe change by other instance, restore zoom setting
-        //Constants.Pinch.MINIMUM_ZOOM = this.minScale;
-        //Constants.Pinch.MAXIMUM_ZOOM = this.maxScale;
-
-        showLog(format("%s / %s", xPositionRelativeToPage, yPositionRelativeToPage));
+        LOGGER.warning("xPositionInRealScale" + xPositionRelativeToPage);
 
         WritableMap event = Arguments.createMap();
         event.putString("message", "pageSingleTap|"+page+"|"+xPositionRelativeToPage+"|"+yPositionRelativeToPage);
