@@ -158,21 +158,19 @@ public class PdfView extends PDFView implements OnPageChangeListener,OnLoadCompl
 
     @Override
     public boolean onTap(MotionEvent e){
-
         val xPositionInRealScale = this.toRealScale(-pdfView.currentXOffset - e.x);
         val yPositionInRealScale = this.toRealScale(-pdfView.currentYOffset - e.y);
-        // val xPositionRelativeToPage = xPositionInRealScale / this.getPageSize(0).width * 100
-        // val yPositionRelativeToPage = yPositionInRealScale / this.getPageSize(0).height * 100
+        val xPositionRelativeToPage = xPositionInRealScale / this.getPageSize(0).width * 100;
+        val yPositionRelativeToPage = yPositionInRealScale / this.getPageSize(0).height * 100;
 
         // maybe change by other instance, restore zoom setting
         //Constants.Pinch.MINIMUM_ZOOM = this.minScale;
         //Constants.Pinch.MAXIMUM_ZOOM = this.maxScale;
 
         LOGGER.warning("xPositionInRealScale");
-        LOGGER.warning(xPositionInRealScale);
 
         WritableMap event = Arguments.createMap();
-        event.putString("message", "pageSingleTap|"+page+"|"+xPositionInRealScale+"|"yPositionInRealScale);
+        event.putString("message", "pageSingleTap|"+page+"|"+xPositionRelativeToPage+"|"+yPositionRelativeToPage);
 
         ReactContext reactContext = (ReactContext)this.getContext();
         reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
